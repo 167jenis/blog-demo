@@ -35,7 +35,6 @@ import SearchData from "./highe_oder_cmt/UserList";
 import SearchTodo from "./highe_oder_cmt/TodoList";
 import MyHook from "./Hook/MyHook";
 import LeetCode from "./leetCode_cmt/LeetCode";
-import ComA from "./Hook/context/ComA";
 import { createContext } from "react";
 import PayPal from "./component/PayPal";
 // import LineChats from "./component/LineChats";
@@ -48,32 +47,30 @@ import MainSelect from "./component/PaginationSelect/MainSelect";
 import { CartProvider } from "./contexts/cart";
 import ConmtextStoreGet from "./component/ConmtextStoreGet";
 import ConmtextStoreUpdate from "./component/ConmtextStoreUpdate";
-const stripePromise = loadStripe(
-  "pk_test_51MywGsSHQm1xM13KSistv3DuhSvR836AzDfCXBex1ZkYfjyUUvFH4otNM8OxfLb5IwZMDXkrBnLASBv7CdZYRQr800SHgX3Haw"
-);
-const Fname = createContext();
-const Lname = createContext();
+// const stripePromise = loadStripe(
+//   "pk_test_51MywGsSHQm1xM13KSistv3DuhSvR836AzDfCXBex1ZkYfjyUUvFH4otNM8OxfLb5IwZMDXkrBnLASBv7CdZYRQr800SHgX3Haw"
+// );
 
 function App() {
   // stripePromise.then((res) => {
   //   console.log("ressss----", res.retrievePaymentIntent());
   // });
   const [dateSave, setDateSave] = useState([]);
-  const options = {
-    // passing the client secret obtained from the server
-    clientSecret:
-      "sk_test_51MywGsSHQm1xM13K8YQUc9YRnNhkBGWiMCtP6Kjwi4BfHAVJyfGdmjFSr9ANye71bQAwT693IMdlJOwpPjAT6QDo003iOwnhHk",
-  };
+  // const options = {
+  //   // passing the client secret obtained from the server
+  //   clientSecret:
+  //     "sk_test_51MywGsSHQm1xM13K8YQUc9YRnNhkBGWiMCtP6Kjwi4BfHAVJyfGdmjFSr9ANye71bQAwT693IMdlJOwpPjAT6QDo003iOwnhHk",
+  // };
   let [cheng, setcheng] = useState("anil");
   let myArray = [1, 2, 3, 4, 5];
   const [number, setNumber] = useState();
   const [checkout, setCheckout] = useState(false);
-  let total = 0;
-  total = myArray.reduce((total, num, i) => {
-    console.log("num--->", num);
-    return total + num;
-  });
-  console.log("total----->", total);
+  // let total = 0;
+  // total = myArray.reduce((total, num, i) => {
+  //   console.log("num--->", num);
+  //   return total + num;
+  // });
+  // console.log("total----->", total);
   // const [array, setArray] = useState([1, 2, 3, 4]);
   // let abc = [...array];
   // abc[1] = 6;
@@ -82,6 +79,7 @@ function App() {
   // }, [array]);
   // setArray(abc);
   // console.log("array---->", array);
+
   var my_Array = [
     {
       name: "jenis",
@@ -126,21 +124,21 @@ function App() {
     },
   ];
 
-  console.log("my_Arrayyyyy", my_Array);
+  // console.log("my_Arrayyyyy", my_Array);
 
-  my_Array.forEach((element) => {
-    let abc = my_check_array.filter((elements) => {
-      return elements.name === element.name;
-    });
-    if (abc.length == 0) {
-      console.log("aaaa", element.name);
-      element.status = true;
-    } else {
-      element.status = false;
-    }
-    console.log("sssss", abc);
-  });
-  console.log("my_Array", my_Array);
+  // my_Array.forEach((element) => {
+  //   let abc = my_check_array.filter((elements) => {
+  //     return elements.name === element.name;
+  //   });
+  //   if (abc.length == 0) {
+  //     console.log("aaaa", element.name);
+  //     element.status = true;
+  //   } else {
+  //     element.status = false;
+  //   }
+  //   console.log("sssss", abc);
+  // });
+  // console.log("my_Array", my_Array);
 
   var name = "jenis alagiya";
 
@@ -155,22 +153,22 @@ function App() {
   function parentalert(ml) {
     alert(ml);
   }
-  const date = () => {
-    var date = new Date().getDate();
-    var month = new Date().getMonth() + 1;
-    var year = new Date().getFullYear();
-    // alert(date + "-" + month + "-" + year);
-    let clickedDate = date + month + year;
-    // clickedDate.push(date + month + year);
-    setDateSave([...dateSave, clickedDate]);
-    console.log("date------>", clickedDate);
-    // let abc = dateSave;
-    localStorage.setItem(
-      "dateSave",
-      JSON.stringify([...dateSave, clickedDate])
-    );
-  };
-  console.log("date dave", dateSave);
+  // const date = () => {
+  //   var date = new Date().getDate();
+  //   var month = new Date().getMonth() + 1;
+  //   var year = new Date().getFullYear();
+  //   // alert(date + "-" + month + "-" + year);
+  //   let clickedDate = date + month + year;
+  //   // clickedDate.push(date + month + year);
+  //   setDateSave([...dateSave, clickedDate]);
+  //   console.log("date------>", clickedDate);
+  //   // let abc = dateSave;
+  //   localStorage.setItem(
+  //     "dateSave",
+  //     JSON.stringify([...dateSave, clickedDate])
+  //   );
+  // };
+  // console.log("date dave", dateSave);
   let day = 1;
   let category = "jendis";
   let array = [
@@ -186,10 +184,9 @@ function App() {
   let filter = array.filter(
     (item) => day == item?.day && category == item?.name
   );
-  console.log("filter", filter);
 
   // =============game========
-  const [typeCheck, setTypeCheck] = useState("O");
+  const [typeCheck, setTypeCheck] = useState("");
   const [arrayGame, setArrayGame] = useState([
     {
       one: ["", "", ""],
@@ -204,165 +201,6 @@ function App() {
       there: ["", "", ""],
     },
   ]);
-  // else if()
-  const checkFun = (pot, index) => {
-    console.log("pottt-->", pot, "index", index, "typeCheck", typeCheck);
-
-    if (typeCheck == "O") {
-      let abc = [...arrayGame];
-      abc.map((item) => {
-        item[pot][index] = typeCheck;
-      });
-      console.log("abc-->", abc);
-      let abc2 = [...arrayGame2];
-      // abc.map((item) => {
-
-      let filter = abc[0].one.filter((element) => element == "O");
-      console.log("filterrrrrr", filter.length);
-      if (filter.length >= 3) {
-        // alert("1");
-        abc2[0].one[0] = filter?.[0];
-        abc2[0].tow[0] = filter?.[1];
-        abc2[0].there[0] = filter?.[2];
-      } else if (
-        abc[0].tow == ["O", "O", "O"] ||
-        abc[0].tow == ["X", "X", "X"]
-      ) {
-        // alert("2");
-        // abc2.one[1] = abc[0].tow[0];
-        // abc2.tow[1] = abc[0].tow[1];
-        // abc2.there[1] = abc[0].tow[2];
-      } else if (
-        abc[0].there == ["O", "O", "O"] ||
-        abc[0].there == ["X", "X", "X"]
-      ) {
-        alert("3");
-
-        // abc2.one[2] = abc[0].there[0];
-        // abc2.tow[2] = abc[0].there[1];
-        // abc2.there[2] = abc[0].there[2];
-      }
-      // });
-      console.log("xxxxxsssss", abc2);
-      setArrayGame(abc);
-      setArrayGame2(abc2);
-      setTypeCheck("X");
-    } else {
-      let abc = [...arrayGame];
-      abc.map((item) => {
-        item[pot][index] = typeCheck;
-      });
-      console.log("abc-->", abc);
-      let abc2 = [...arrayGame2];
-      // abc.map((item) => {
-      console.log("abc[0]one", abc[0].one, "===", ["O", "O", "O"]);
-      console.log("abc[0]one", abc[0].one === ["O", "O", "O"]);
-      if (abc[0].one == ["O", "O", "O"]) {
-        alert("1");
-        // abc2.one[0] = abc[0].one[0];
-        // abc2.tow[0] = abc[0].one[1];
-        // abc2.there[0] = abc[0].one[2];
-      } else if (
-        abc[0].tow == ["O", "O", "O"] ||
-        abc[0].tow == ["X", "X", "X"]
-      ) {
-        alert("2");
-
-        // abc2.one[1] = abc[0].tow[0];
-        // abc2.tow[1] = abc[0].tow[1];
-        // abc2.there[1] = abc[0].tow[2];
-      } else if (
-        abc[0].there == ["O", "O", "O"] ||
-        abc[0].there == ["X", "X", "X"]
-      ) {
-        alert("3");
-
-        // abc2.one[2] = abc[0].there[0];
-        // abc2.tow[2] = abc[0].there[1];
-        // abc2.there[2] = abc[0].there[2];
-      }
-      // });
-
-      setArrayGame(abc);
-      setArrayGame2(abc2);
-
-      setTypeCheck("O");
-    }
-  };
-  console.log("arrrrrrrrrrrrrr", arrayGame2);
-  console.log("typeCheck-->", typeCheck);
-  console.log("game--->", arrayGame);
-
-  useEffect(() => {
-    arrayGame[0]?.one.map((item, index) => {
-      console.log("indexxx->", index);
-      if (
-        arrayGame[0].one[index] == "O" &&
-        arrayGame[0].tow[index] == "O" &&
-        arrayGame[0].there[index] == "O"
-      ) {
-        console.log(
-          "yesssssssssssssssssssss",
-          arrayGame[0].one[0],
-          arrayGame[0].tow[0],
-          arrayGame[0].there[0]
-        );
-        alert("yes");
-
-        setArrayGame([
-          {
-            one: ["", "", ""],
-            tow: ["", "", ""],
-            there: ["", "", ""],
-          },
-        ]);
-      } else if (
-        arrayGame[0].one[index] == "X" &&
-        arrayGame[0].tow[index] == "X" &&
-        arrayGame[0].there[index] == "X"
-      ) {
-        alert("no");
-        setArrayGame([
-          {
-            one: ["", "", ""],
-            tow: ["", "", ""],
-            there: ["", "", ""],
-          },
-        ]);
-      } else if (
-        arrayGame2[0].one[index] == "O" &&
-        arrayGame2[0].tow[index] == "O" &&
-        arrayGame2[0].there[index] == "O"
-      ) {
-        setArrayGame([
-          {
-            one: ["", "", ""],
-            tow: ["", "", ""],
-            there: ["", "", ""],
-          },
-        ]);
-        setArrayGame2([
-          {
-            one: ["", "", ""],
-            tow: ["", "", ""],
-            there: ["", "", ""],
-          },
-        ]);
-      } else if (
-        arrayGame2[0].one[index] == "X" &&
-        arrayGame2[0].tow[index] == "X" &&
-        arrayGame2[0].there[index] == "X"
-      ) {
-        setArrayGame([
-          {
-            one: ["", "", ""],
-            tow: ["", "", ""],
-            there: ["", "", ""],
-          },
-        ]);
-      }
-    });
-  }, [arrayGame]);
 
   /// variationdata
   const [variationData, setVariationData] = useState([]);
@@ -424,7 +262,6 @@ function App() {
   //   setAddVariation("");
   // };
 
-  console.log("variation--data", variationData);
   function log(value) {
     console.log("valuess---->", value);
   }
@@ -485,15 +322,13 @@ function App() {
         >
           click me
         </button>
-        <Hide_show />
-        <Profile />
-        <Dog hp={getdata} />
-        <div>
-          <Eject />
-        </div>
+        {/* <Hide_show /> */}
+        {/* <Profile /> */}
+        {/* <Dog hp={getdata} /> */}
+        <div>{/* <Eject /> */}</div>
         <Button className="m-5">click</Button>
-        <Amfun />
-        <Cpdata name={hk} alert={parentalert} />
+        {/* <Amfun /> */}
+        {/* <Cpdata name={hk} alert={parentalert} /> */}
         <div>
           <BrowserRouter>
             <Navbar />
@@ -506,10 +341,10 @@ function App() {
         </div>
         <br />
         <br />
-        <Array />
+        {/* <Array />
         <Search />
         <Color />
-        <DataSave />
+        <DataSave /> */}
         <br />
         <br />
         {/* <AppiGet /> */}
@@ -524,22 +359,22 @@ function App() {
           <span>{item}</span>
         ))} */}
         </div>
-        <Slider
+        {/* <Slider
           range
           allowCross={false}
           min={0}
           max={20000}
           defaultValue={[50, 2000]}
           onChange={log}
-        />{" "}
+        />{" "} */}
         {/* <Range /> */}
         <br />
-        <Card />
+        {/* <Card /> */}
         <br />
         <br />
         {/* <Date /> */}
-        <DateColor />
-        <LeetCode />
+        {/* <DateColor />
+        <LeetCode /> */}
         <br />
         <br />
         <button onClick={() => date()}>click</button>
@@ -591,18 +426,18 @@ function App() {
         <br />
         {/* <HocComponent /> */}
         <h1>Highe Oder Component 1</h1>
-        <A />
-        <B />
+        {/* <A />
+        <B /> */}
         <br />
         <br />
         <br />
         <h1>Highe Oder Component 2</h1>
         <div style={{ display: "flex" }}>
-          <SearchData />
-          <SearchTodo />
+          {/* <SearchData />
+          <SearchTodo /> */}
         </div>
         <h1 style={{ textAlign: "center", alignContent: "center" }}>HOOK</h1>
-        <MyHook />
+        {/* <MyHook /> */}
         <div>
           <input
             type={"text"}
@@ -634,15 +469,7 @@ function App() {
             </div>
           ))}
         </div>
-        <div className="p-4">
-          <MainSelect />
-        </div>
-        <h2>context api</h2>
-        <Fname.Provider value={"jenis"}>
-          <Lname.Provider value={"alagiya"}>
-            <ComA />
-          </Lname.Provider>
-        </Fname.Provider>
+        <div className="p-4">{/* <MainSelect /> */}</div>
         <hr />
         <hr />
         <hr />
@@ -676,4 +503,3 @@ function App() {
 }
 
 export default App;
-export { Fname, Lname };

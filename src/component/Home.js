@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
-import data from "../data1.json";
+// import data from "../data1.json";
 function Home() {
-  console.log("aasas", data);
+  // console.log("aasas", data);
   return (
     <>
       <h1>wlcome to home component</h1>
