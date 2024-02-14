@@ -113,3 +113,45 @@ export const saveSearchSlice = createSlice({
 export const { setPrimaryAdd, setSelectedPrimaryAdd } = saveSearchSlice.actions;
 
 export default saveSearchSlice.reducer;
+
+// store file
+("use client");
+import { configureStore } from "@reduxjs/toolkit";
+import dummySlice from "./slice/dummySlice";
+import holidayPropertySlice from "./slice/holiday/holidayPropertySlice";
+import authSlice from "./slice/holiday/authSlice";
+import userProfileSlices from "./slice/user/ProfileSlice";
+import userPropertiesSlices from "./slice/user/PropertiesSlice";
+import userFavoritiesSlices from "./slice/user/FavoritiesSlice";
+import favPropertySlice from "./slice/dashboard/favProperty";
+import holidayARISlice from "./slice/holiday/holidayAri";
+import LikeProperyData from "./slice/holiday/likePropertySlice";
+import SaveSearchSlice from "./slice/savesearch/page";
+import searchParamsSlice from "./slice/user/searchParamsSlice";
+import holidayPropertyByID from "./slice/holiday/holidayPropertyDetail";
+import { propertyListSlice } from "./slice/listProperty/PrpoertyListSlice";
+
+export const store = configureStore({
+  reducer: {
+    dummySlice,
+    holidayPropertySlice,
+    authSlice,
+    userProfileSlices,
+    userPropertiesSlices,
+    userFavoritiesSlices,
+    favPropertySlice,
+    holidayARISlice,
+    LikeProperyData,
+    SaveSearchSlice,
+    searchParamsSlice,
+    holidayPropertyByID,
+    propertyListSlice,
+  },
+});
+// provid
+import { Provider } from "react-redux";
+import { store } from "redux/store";
+
+const ReduxProvider = ({ children }) => {
+  return <Provider store={store}>{children}</Provider>;
+};
