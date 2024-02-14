@@ -1,0 +1,73 @@
+.continer-my {
+    background-color: #402D3F;
+}
+
+.my-card {
+    /* position: relative !important; */
+    width: 25% !important;
+    border-radius: 20px !important;
+    /* z-index: 50 !important; */
+    /* background: none !important; */
+}
+
+.card {
+    background: none !important;
+}
+
+.my-main {
+    position: relative;
+    /* z-index: -1 !important; */
+}
+
+.my-demo {
+    background-color: #fff;
+    position: relative;
+    z-index: 1;
+}
+
+.my-button {
+    border: none;
+    outline: none;
+    padding: 10px;
+    background-color: #F2B060;
+    border-radius: 10px;
+    margin-top: 40px;
+    /* z-index: ; */
+}
+
+.my-card::after {
+    content: "";
+    width: 70px;
+    height: 70px;
+    /* background-color: red; */
+    position: absolute;
+    top: -20px;
+    left: -30px;
+    border-radius: 50%;
+    border: 5px solid #F2B060;
+}
+
+.my-xyz::before {
+    content: "";
+    width: 400px;
+    height: 28px;
+    background-color: #F2B060;
+    position: absolute;
+    border-radius: 20px;
+    /* z-index: -1; */
+    left: -70px;
+    top: 180px;
+    transform: rotate(-45deg);
+}
+
+.gameMain {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 150px;
+}
+
+.button {
+    width: 50px;
+    height: 50px;
+}
